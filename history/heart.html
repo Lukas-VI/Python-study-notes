@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #076bc2; /* 背景色 */
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: rotate(45deg);
+            opacity: 0.8;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            document.body.appendChild(heart);
+
+            const x = Math.random() * window.innerWidth;
+            heart.style.left = `${x}px`;
+
+            const floatDuration = Math.random() * 5 + 5; // 漂浮时间
+            heart.style.transform = `translateY(${window.innerHeight}px) rotate(-45deg)`;
+            heart.style.transition = `transform ${floatDuration}s ease-in-out`;
+
+            // 设置心形向下漂浮
+            setTimeout(() => {
+                heart.style.transform = `translateY(-1000vh) rotate(-45deg)`;
+
+                // 漂浮结束后移除心形
+                setTimeout(() => {
+                    heart.remove();
+                }, floatDuration * 1000);
+            }, 100);
+
+            // 每次创建心形的时间间隔
+            setTimeout(createHeart, 3);
+        }
+
+        // 开始创建心形
+        createHeart();
+    </script>
+</body>
+</html>

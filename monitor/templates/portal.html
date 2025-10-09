@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统资源监控</title>
+    <script>
+        function fetchResources() {
+            fetch('/api/resources')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('cpu').innerText = 'CPU 利用率: ' + data.cpu_usage + '%';
+                    document.getElementById('memory').innerText = '内存利用率: ' + data.memory_usage + '%';
+                    document.getElementById('disk').innerText = '磁盘利用率: ' + data.disk_usage + '%';
+                });
+        }
+
+        setInterval(fetchResources, 1000); // 每秒请求一次资源
+    </script>
+</head>
+<body>
+    <h1>系统资源监控</h1>
+    <div id="cpu">CPU 利用率: 正在加载...</div>
+    <div id="memory">内存利用率: 正在加载...</div>
+    <div id="disk">磁盘利用率: 正在加载...</div>
+</body>
+</html>
