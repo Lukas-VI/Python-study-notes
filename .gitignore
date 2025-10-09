@@ -1,0 +1,8 @@
+/build
+/dist
+temp
+build
+*.pyc
+*.toc
+*.exe
+*.pkg

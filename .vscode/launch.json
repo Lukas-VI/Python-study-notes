@@ -7,7 +7,7 @@
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal",
-      "justMyCode": false,
+      "justMyCode": true,
     },
     {
       "name": "C/C++ Runner: Debug Session",
