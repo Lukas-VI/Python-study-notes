@@ -5,4 +5,9 @@ build
 *.pyc
 *.toc
 *.exe
-*.pkg
+*.pkg2tracking/GVHMR-Realtime/
+tracking/Mediapipe-Tracking-Universal/
+
+tracking/XR-Animator_v0.30.0_windows/
+
+tracking/XR-Animator/

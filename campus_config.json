@@ -1,0 +1,18 @@
+{
+    "username": "2428624029",
+    "password": "Lukas_9510",
+    "portal_url": "http://10.101.2.194:6060/portal.do",
+    "login_params": {
+        "wlanuserip": "10.104.152.78",
+        "wlanacname": "HSD-BRAS-2",
+        "mac": "e0:0a:f6:7f:59:0d",
+        "vlan": "19951084",
+        "hostname": "LUYH-TB16",
+        "rand": "de764f4a42773c",
+        "url": "http://www.msftconnecttest.com/redirect"
+    },
+    "check_urls": [
+        "http://www.msftconnecttest.com/connecttest",
+        "http://www.baidu.com"
+    ]
+}
